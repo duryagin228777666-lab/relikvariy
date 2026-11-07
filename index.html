@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Реликварий — сеть магазинов комиксов</title>
+<meta name="description" content="Реликварий — сеть магазинов мрачных комиксов: рыцари, доспехи, терновые венцы и колокола мёртвых городов.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@800;900&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Onest:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<div class="callout">Сеть магазинов комиксов</div>
+
+<nav class="top">
+  <a href="#top" class="top__brand">✠ ver. MMXXVI</a>
+  <span class="top__time" aria-label="Текущее время"><span class="top__hour">час</span><span id="clock">—</span><span class="dot"></span></span>
+</nav>
+
+<header class="hero" id="top">
+  <h1 class="hero__title">
+    <span class="mask"><span class="t1 fit">Реликварий</span></span>
+    <span class="t2">мрачных</span>
+    <span class="mask mask--t3"><span class="t3">комиксов</span></span>
+  </h1>
+
+  <div class="hero__lower">
+    <div class="hero__left">
+      <div class="marquee"><div class="marquee__inner" id="marquee"></div></div>
+      <nav class="halls">
+        <p class="halls__label">Залы</p>
+        <ul id="halls" role="list"></ul>
+        <p class="halls__label">Магазин</p>
+        <ul role="list">
+          <li><a href="#about"><span class="halls__name">О магазине</span><span class="halls__desc" lang="en">“Abandon all hope, ye who enter here.” — Dante</span></a></li>
+          <li><a href="#catalog"><span class="halls__name">Весь каталог</span><span class="halls__desc" lang="en">“Quoth the Raven, ‘Nevermore.’” — Poe</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <span class="hero__warn">(Листайте осторожно. Здесь колется.)</span>
+    <figure class="hero__art frame">
+      <canvas id="heroArt" width="180" height="225" aria-label="Пиксельная гравюра: рыцарский шлем с терновым венцом и крыльями"></canvas>
+    </figure>
+  </div>
+</header>
+
+<div class="thorns" aria-hidden="true"></div>
+
+<section class="intro" id="about">
+  <span class="label">(00) — О магазине</span>
+  <p class="intro__text reveal">Мы собираем истории, от которых ржавеют доспехи. Павшие рыцари, проклятые короны, города, где звонят по живым.
+    <span class="red">Каждый том — ручная печать и тираж в сто экземпляров.</span></p>
+</section>
+
+<section class="catalog" id="catalog">
+  <div class="catalog__head">
+    <h2 class="catalog__title fit">Каталог</h2>
+    <figure class="catalog__sub" id="quote">
+      <blockquote lang="en"></blockquote>
+      <figcaption></figcaption>
+    </figure>
+  </div>
+  <ol class="list" id="list"></ol>
+</section>
+
+<div class="thorns thorns--flip" aria-hidden="true"></div>
+
+<footer class="foot">
+  <p class="foot__motto fit">Memento legere</p>
+  <p class="foot__sub">— помни о чтении —</p>
+  <div class="foot__meta">
+    <span>Реликварий © MMXXVI</span>
+    <span>Учебный проект · сделан в Claude Code</span>
+    <a href="#top">↑ наверх</a>
+  </div>
+</footer>
+
+<script src="pixel.js?v=8"></script>
+<script src="app.js?v=8"></script>
+</body>
+</html>
