@@ -255,6 +255,9 @@ canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
   .intro .label, .intro__text { grid-column: 1 / -1; }
 }
 @media (max-width: 720px) {
+  .top { flex-wrap: wrap; gap: 8px 16px; }
+  .top__hour { display: none; }
+  #clock { font-size: 1.1rem; }
   .hero__lower { grid-template-columns: minmax(0, 1fr); }
   .hero__art { margin-top: 8px; order: -1; max-width: 420px; }
   .hero__warn { writing-mode: horizontal-tb; justify-self: start; padding: 0; }

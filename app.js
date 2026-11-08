@@ -99,7 +99,17 @@
   let fitTimer = null;
   window.addEventListener("resize", () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitAll, 120); });
   fitAll();
-  document.fonts.ready.then(fitAll);
+  /* fonts.ready can resolve before the display font even starts loading,
+     so request it explicitly and refit on every font load and on page load. */
+  document.fonts.load('900 100px "Alumni Sans"').then(fitAll, fitAll);
+  document.fonts.addEventListener("loadingdone", fitAll);
+  window.addEventListener("load", fitAll);
+
+  /* Rows are rendered by JS, so a #book-N anchor in the URL needs a manual scroll. */
+  if (location.hash.startsWith("#book-")) {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target) window.addEventListener("load", () => target.scrollIntoView({ behavior: "instant" }));
+  }
 
   /* ---------- Marquee ---------- */
   const WORDS = ["Новые поступления", "Ручная печать", "Тираж — сто экземпляров", "Доспехи в комплект не входят", "Открыто до полуночи"];
